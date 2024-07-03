@@ -1,15 +1,23 @@
 {
-  "octalogic": {
+  "octareact": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-octalogic-octalogic-992ec-authRole",
-      "UnauthRoleArn": "arn:aws:iam::649688185658:role/amplify-octalogic-octalogic-992ec-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::649688185658:role/amplify-octalogic-octalogic-992ec-authRole",
+      "AuthRoleName": "amplify-octareact-octareact-0897d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::649688185658:role/amplify-octareact-octareact-0897d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::649688185658:role/amplify-octareact-octareact-0897d-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-octalogic-octalogic-992ec-deployment",
-      "UnauthRoleName": "amplify-octalogic-octalogic-992ec-unauthRole",
-      "StackName": "amplify-octalogic-octalogic-992ec",
-      "StackId": "arn:aws:cloudformation:us-west-2:649688185658:stack/amplify-octalogic-octalogic-992ec/3ef80a80-3973-11ef-89b0-06ab78c86e77",
-      "AmplifyAppId": "d2pqmln5erdfuy"
+      "DeploymentBucketName": "amplify-octareact-octareact-0897d-deployment",
+      "UnauthRoleName": "amplify-octareact-octareact-0897d-unauthRole",
+      "StackName": "amplify-octareact-octareact-0897d",
+      "StackId": "arn:aws:cloudformation:us-west-2:649688185658:stack/amplify-octareact-octareact-0897d/493b86d0-398b-11ef-9b09-02001cc45e67",
+      "AmplifyAppId": "d321n7yh8r8ugt"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d321n7yh8r8ugt",
+          "type": "cicd"
+        }
+      }
     }
   }
 }

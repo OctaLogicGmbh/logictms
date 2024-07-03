@@ -1,5 +1,5 @@
 {
-  "projectName": "octalogic",
+  "projectName": "octareact",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
@@ -7,7 +7,7 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "dist",
-      "BuildCommand": "pnpm run build",
+      "BuildCommand": "npmp run build",
       "StartCommand": "pnpm run start"
     }
   },

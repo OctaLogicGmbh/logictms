@@ -8,9 +8,9 @@ export default defineConfig({
   //server: {
   //port: 8080,
   //},
-  //build: {
-  //  outDir: 'build',
-  //},
+  build: {
+    outDir: 'dist',
+  },
   plugins: [
     react(),
     devServer({

@@ -23,6 +23,9 @@ type TokenResponse =
 const { AUTH_ORIGIN } = process.env;
 
 if (!AUTH_ORIGIN) {
+
+
+  
   throw new Error('AUTH_ORIGIN is not defined');
 }
 //aa
