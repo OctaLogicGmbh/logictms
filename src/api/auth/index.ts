@@ -33,14 +33,14 @@ logger.debug('AUTH_ORIGIN2:', AUTH_ORIGIN);
 const tokenEndpoint = `https://7qk9m2xvu2.us-west-2.awsapprunner.com/v1/auth/login`;
 const validateEndpoint = `${AUTH_ORIGIN}/validate`;
 
-console.log('tokenEndpoint:', tokenEndpoint);
-logger.info('tokenEndpoint2:', tokenEndpoint);
+//console.log('tokenEndpoint:', tokenEndpoint);
+//logger.info('tokenEndpoint2:', tokenEndpoint);
 
 const auth = new Hono()
   .post('/:tenant_id/signin', zValidator('json', signinSchema), async (c) => {
-    console.log('Handling signin for tenant:', c.req.param('tenant_id'));
+    //console.log('Handling signin for tenant:', c.req.param('tenant_id'));
     //logger.debug('Handling signin for tenant2:', c.req.param('tenant_id'));
-    
+
     const data = c.req.valid('json');
     const { tenant_id } = c.req.param();
 
@@ -56,11 +56,11 @@ const auth = new Hono()
       //redirect: 'follow' // follow redirects
     });
 
-    console.log('Token Response:', tokenResponse.status, tokenResponse.statusText);
-    logger.debug('Token Response2:', tokenResponse.status, tokenResponse.statusText);
+    //console.log('Token Response:', tokenResponse.status, tokenResponse.statusText);
+    //logger.debug('Token Response2:', tokenResponse.status, tokenResponse.statusText);
 
     const token = (await tokenResponse.json()) as TokenResponse;
-    
+
     if ('error' in token) {
       throw new HTTPException(StatusCodes.UNAUTHORIZED, { message: token.error });
     }
@@ -74,8 +74,18 @@ const auth = new Hono()
       body: JSON.stringify({ token: token.access_token }),
     });
 
-    console.log('Token Response:', tokenResponse.status, tokenResponse.statusText, token.access_token);
-    logger.debug('Token Response2:', tokenResponse.status, tokenResponse.statusText, token.access_token);
+    console.log(
+      'Token Response:',
+      tokenResponse.status,
+      tokenResponse.statusText,
+      token.access_token,
+    );
+    logger.debug(
+      'Token Response2:',
+      tokenResponse.status,
+      tokenResponse.statusText,
+      token.access_token,
+    );
 
     const payload = (await validateResponse.json()) as Omit<User, 'username'>;
 
