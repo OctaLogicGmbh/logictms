@@ -9,7 +9,7 @@ import commonjs from '@rollup/plugin-commonjs';
 export default {
   input: Object.fromEntries(
     glob
-      .sync(['src/entry.server.ts', 'src/api/**/*.ts', 'src/models/**/*.ts', 'src/utils/**/*.ts'], {
+      .sync(['src/server.ts', 'src/api/**/*.ts', 'src/models/**/*.ts', 'src/utils/**/*.ts'], {
         ignore: ['**/*.d.ts', '**/*.test.ts'],
       })
       .map((file) => [
@@ -18,7 +18,7 @@ export default {
       ]),
   ),
   output: {
-    dir: 'build', // set to 'dist' as mentioned earlier
+    dir: 'dist', // set to 'dist' as mentioned earlier
     format: 'esm',
     sourcemap: true,
     preserveModules: true,

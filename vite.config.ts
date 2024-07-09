@@ -5,16 +5,16 @@ import devServer from '@hono/vite-dev-server';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  //server: {
-  //port: 8080,
-  //},
+  server: {
+    port: 8080,
+  },
   build: {
     outDir: 'build',
   },
   plugins: [
     react(),
     devServer({
-      entry: 'src/entry.server.ts',
+      entry: 'src/server.ts',
       exclude: [
         /.*\.tsx?($|\?)/,
         /.*\.(s?css|pcss)($|\?)/,

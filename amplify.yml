@@ -8,7 +8,23 @@ frontend:
       commands:
         - pnpm run build
   artifacts:
-    baseDirectory: dist
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+
+backend:
+  phases:
+    build:
+      commands:
+        - pnpm install
+    postBuild:
+      commands:
+        - amplify push --yes
+  artifacts:
+    baseDirectory: build
     files:
       - '**/*'
   cache:

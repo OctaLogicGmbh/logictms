@@ -12,7 +12,7 @@ import { decodeBase64 } from './utils/common';
 
 const isProd = process.env['NODE_ENV'] === 'production';
 
-let html = await readFile(isProd ? './build/index.html' : 'index.html', 'utf8');
+let html = await readFile(isProd ? 'build/index.html' : 'index.html', 'utf8');
 
 if (!isProd) {
   const reactRefresh = `<head>
@@ -54,7 +54,7 @@ const app = new Hono()
     return next();
   })
   .route('/api', api)
-  .use('/static/*', serveStatic({ root: isProd ? './build/' : './' }))
+  //.use('/static/*', serveStatic({ root: isProd ? './build/' : './' }))
   .use('/assets/*', serveStatic({ root: isProd ? './build/' : './' }))
   .get('/*', (c) => c.html(html));
 

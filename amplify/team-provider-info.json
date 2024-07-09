@@ -1,0 +1,15 @@
+{
+  "octatest": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-octatest-octatest-7cb01-authRole",
+      "UnauthRoleArn": "arn:aws:iam::649688185658:role/amplify-octatest-octatest-7cb01-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::649688185658:role/amplify-octatest-octatest-7cb01-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-octatest-octatest-7cb01-deployment",
+      "UnauthRoleName": "amplify-octatest-octatest-7cb01-unauthRole",
+      "StackName": "amplify-octatest-octatest-7cb01",
+      "StackId": "arn:aws:cloudformation:us-west-2:649688185658:stack/amplify-octatest-octatest-7cb01/24885bd0-3e1b-11ef-8e18-061755ce02bf",
+      "AmplifyAppId": "dhta2cihdem5c"
+    }
+  }
+}
