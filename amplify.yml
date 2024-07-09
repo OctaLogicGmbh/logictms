@@ -19,19 +19,15 @@ frontend:
 
 backend:
   phases:
-    build:
+    preBuild:
       commands:
         - npm install -g pnpm
         - export PATH=$PATH:`npm bin -g`
         - pnpm install
-        - amplify pull --yes
-    postBuild:
+    build:
       commands:
         - amplify push --yes
-  artifacts:
-    baseDirectory: build
-    files:
-      - '**/*'
   cache:
     paths:
       - node_modules/**/*
+
