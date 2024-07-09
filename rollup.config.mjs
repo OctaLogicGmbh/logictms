@@ -18,7 +18,7 @@ export default {
       ]),
   ),
   output: {
-    dir: 'dist', // set to 'dist' as mentioned earlier
+    dir: 'build', // set to 'dist' as mentioned earlier
     format: 'esm',
     sourcemap: true,
     preserveModules: true,

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && rollup -c rollup.config.mjs",
-    "start": "cross-env NODE_ENV=production node dist/src/entry.server.js",
+    "start": "cross-env NODE_ENV=production node build/src/entry.server.js",
     "lint": "eslint . --max-warnings 0",
     "preview": "vite preview"
   },
