@@ -1,23 +1,15 @@
 {
   "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-octatest-main-ec4d6-authRole",
-      "UnauthRoleArn": "arn:aws:iam::649688185658:role/amplify-octatest-main-ec4d6-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::649688185658:role/amplify-octatest-main-ec4d6-authRole",
+      "AuthRoleName": "amplify-octatestie-main-a6f76-authRole",
+      "UnauthRoleArn": "arn:aws:iam::649688185658:role/amplify-octatestie-main-a6f76-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::649688185658:role/amplify-octatestie-main-a6f76-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-octatest-main-ec4d6-deployment",
-      "UnauthRoleName": "amplify-octatest-main-ec4d6-unauthRole",
-      "StackName": "amplify-octatest-main-ec4d6",
-      "StackId": "arn:aws:cloudformation:us-west-2:649688185658:stack/amplify-octatest-main-ec4d6/8a2a68a0-3e22-11ef-984f-06d3e1fedc4d",
-      "AmplifyAppId": "dtwbd3si9p1qp"
-    },
-    "categories": {
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "dtwbd3si9p1qp",
-          "type": "cicd"
-        }
-      }
+      "DeploymentBucketName": "amplify-octatestie-main-a6f76-deployment",
+      "UnauthRoleName": "amplify-octatestie-main-a6f76-unauthRole",
+      "StackName": "amplify-octatestie-main-a6f76",
+      "StackId": "arn:aws:cloudformation:us-west-2:649688185658:stack/amplify-octatestie-main-a6f76/373a6700-3e43-11ef-8794-021cb5db6bd3",
+      "AmplifyAppId": "d1v9p8xb80l99z"
     }
   }
 }
