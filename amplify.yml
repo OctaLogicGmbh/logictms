@@ -1,0 +1,47 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g pnpm
+        - export PATH=$PATH:`npm bin -g`
+        - pnpm install
+    build:
+      commands:
+        - pnpm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+
+backend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g pnpm
+        - export PATH=$PATH:`npm bin -g`
+        - pnpm installNPM 
+    build:
+      commands:
+        - npm run build
+    postBuild:
+      commands:
+        - amplify push --yes
+  cache:
+    paths:
+      - node_modules/**/*
+
+redirects:
+  - source: "/api/auth/SchryverPruebas/signin"
+    target: "/api/auth/SchryverPruebas/signin"
+    status: 200
+    condition: null
+
+customHeaders:
+  - pattern: '**/*'
+    headers:
+      - key: 'X-Powered-By'
+        value: 'Hono'

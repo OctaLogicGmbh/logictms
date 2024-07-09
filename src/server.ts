@@ -1,8 +1,10 @@
 import 'dotenv/config';
 import { Hono } from 'hono';
 import { readFile } from 'node:fs/promises';
+
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
+
 import { setUserCookies } from './api/auth/helpers';
 import api from './api/server';
 import { decodeBase64 } from './utils/common';
