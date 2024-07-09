@@ -3,6 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
+        - npm install -g pnpm
+        - export PATH=$PATH:`npm bin -g`
         - pnpm install
     build:
       commands:
@@ -17,16 +19,16 @@ frontend:
 
 backend:
   phases:
+    preBuild:
+      commands:
+        - npm install -g pnpm
+        - export PATH=$PATH:`npm bin -g`
+        - pnpm install
     build:
       commands:
-        - pnpm install
-    postBuild:
-      commands:
+        - amplify init --yes --envName main
+        - amplify pull --yes --envName main
         - amplify push --yes
-  artifacts:
-    baseDirectory: build
-    files:
-      - '**/*'
   cache:
     paths:
       - node_modules/**/*
