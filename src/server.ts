@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 
+import auth from './api/auth';
 import { setUserCookies } from './api/auth/helpers';
 import api from './api/server';
 import { decodeBase64 } from './utils/common';
@@ -56,6 +57,7 @@ const app = new Hono()
     console.log(`Response status: ${c.res.status}`);
   })
   .route('/api', api)
+  .route('/auth', auth)
   .use('/assets/*', serveStatic({ root: isProd ? './dist/' : './' }))
   .get('/*', (c) => {
     console.log('Serving HTML content');
