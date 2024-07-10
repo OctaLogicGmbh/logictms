@@ -18,7 +18,6 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-
 backend:
   phases:
     preBuild:
@@ -38,11 +37,11 @@ backend:
         - amplify push --yes
     postBuild:
       commands:
+        - echo "Starting Server"
         - pnpm start
   cache:
     paths:
       - node_modules/**/*
-
 customHeaders:
   - pattern: '**/*'
     headers:
