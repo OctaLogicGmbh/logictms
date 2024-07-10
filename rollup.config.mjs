@@ -31,6 +31,7 @@ export default {
   },
   plugins: [
     typescript({
+      tsconfig: './tsconfig.json',
       moduleResolution: 'bundler',
       outputToFilesystem: true,
       allowImportingTsExtensions: false,
