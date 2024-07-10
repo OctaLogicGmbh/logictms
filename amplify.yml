@@ -11,6 +11,9 @@ frontend:
     build:
       commands:
         - pnpm run build
+    postBuild:
+      commands:
+        - pnpm start
   artifacts:
     baseDirectory: dist
     files:
@@ -39,12 +42,6 @@ backend:
   cache:
     paths:
       - node_modules/**/*
-
-redirects:
-  - source: '/api/auth/SchryverPruebas/signin'
-    target: '/api/auth/SchryverPruebas/signin'
-    status: 200
-    condition: null
 
 customHeaders:
   - pattern: '**/*'
