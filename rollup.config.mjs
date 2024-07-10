@@ -22,7 +22,7 @@ export default {
     format: 'esm',
     sourcemap: true,
     preserveModules: true,
-    preserveModulesRoot: '.',
+    preserveModulesRoot: 'src',
   },
   external(id) {
     return (
