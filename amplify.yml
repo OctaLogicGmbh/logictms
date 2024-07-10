@@ -36,6 +36,8 @@ backend:
         - amplify pull --yes
         - echo "Starting Amplify Push"
         - amplify push --yes
+    postBuild:
+      commands:
         - pnpm start
   cache:
     paths:
