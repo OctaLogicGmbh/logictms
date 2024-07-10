@@ -11,7 +11,7 @@ import { decodeBase64 } from './utils/common';
 
 const isProd = process.env['NODE_ENV'] === 'production';
 
-let html = await readFile(isProd ? 'build/index.html' : 'index.html', 'utf8');
+let html = await readFile(isProd ? 'dist/index.html' : 'index.html', 'utf8');
 
 if (!isProd) {
   const reactRefresh = `<head>
@@ -24,14 +24,13 @@ if (!isProd) {
     </script> 
     <script type="module" src="/@vite/client"></script>
   `;
-
   html = html.replace('<head>', reactRefresh);
 }
 
 const app = new Hono()
   .use('*', async (c, next) => {
+    console.log(`Incoming request: ${c.req.method} ${c.req.url}`);
     c.res.headers.set('X-Powered-By', 'Hono');
-    console.log('Setting X-Powered-By header to Hono');
 
     const accessToken = c.req.query('access_token');
 
@@ -39,6 +38,7 @@ const app = new Hono()
       const claimsStr = accessToken.split('.')[1];
 
       if (!claimsStr) {
+        console.log('Invalid access token, skipping user cookie setup.');
         return next();
       }
 
@@ -49,13 +49,14 @@ const app = new Hono()
         active: true,
         claims,
       });
+      console.log('User cookies set.');
     }
 
-    return next();
+    await next();
+    console.log(`Response status: ${c.res.status}`);
   })
   .route('/api', api)
-  //.use('/static/*', serveStatic({ root: isProd ? './build/' : './' }))
-  .use('/assets/*', serveStatic({ root: isProd ? './build/' : './' }))
+  .use('/assets/*', serveStatic({ root: isProd ? './dist/' : './' }))
   .get('/*', (c) => {
     console.log('Serving HTML content');
     return c.html(html);

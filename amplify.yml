@@ -3,6 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
+        - nvm install 22.3.0
+        - nvm use 22.3.0
         - npm install -g pnpm
         - export PATH=$PATH:`npm bin -g`
         - pnpm install
@@ -10,7 +12,7 @@ frontend:
       commands:
         - pnpm run build
   artifacts:
-    baseDirectory: build
+    baseDirectory: dist
     files:
       - '**/*'
   cache:
@@ -21,9 +23,11 @@ backend:
   phases:
     preBuild:
       commands:
+        - nvm install 22.3.0
+        - nvm use 22.3.0
         - npm install -g pnpm
         - export PATH=$PATH:`npm bin -g`
-        - pnpm installNPM 
+        - pnpm installNPM
     build:
       commands:
         - npm run build
@@ -35,8 +39,8 @@ backend:
       - node_modules/**/*
 
 redirects:
-  - source: "/api/auth/SchryverPruebas/signin"
-    target: "/api/auth/SchryverPruebas/signin"
+  - source: '/api/auth/SchryverPruebas/signin'
+    target: '/api/auth/SchryverPruebas/signin'
     status: 200
     condition: null
 

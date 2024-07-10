@@ -9,7 +9,7 @@ export default defineConfig({
     port: 8080,
   },
   build: {
-    outDir: 'build',
+    outDir: 'dist',
   },
   plugins: [
     react(),
