@@ -11,9 +11,6 @@ frontend:
     build:
       commands:
         - pnpm run build
-    postBuild:
-      commands:
-        - pnpm start
   artifacts:
     baseDirectory: dist
     files:
@@ -39,6 +36,9 @@ backend:
         - amplify pull --yes
         - echo "Starting Amplify Push"
         - amplify push --yes
+    postBuild:
+      commands:
+        - pnpm start  # Inicia el servidor después de la construcción del backend
   cache:
     paths:
       - node_modules/**/*
