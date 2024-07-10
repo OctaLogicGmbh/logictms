@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build && rollup -c rollup.config.mjs",
     "fix-paths": "node fix-paths.js",
-    "start": "cross-env NODE_ENV=production node dist/src/server.js",
+    "start": "pnpm run fix-paths && cross-env NODE_ENV=production node dist/src/server.js",
     "lint": "eslint . --max-warnings 0",
     "preview": "vite preview"
   },
