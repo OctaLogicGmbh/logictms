@@ -27,7 +27,7 @@ backend:
         - nvm use 22.3.0
         - npm install -g pnpm
         - export PATH=$PATH:`npm bin -g`
-        - pnpm installNPM
+        - pnpm install
     build:
       commands:
         - echo "Starting Amplify Init"
