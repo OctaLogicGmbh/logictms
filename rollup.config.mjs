@@ -18,7 +18,7 @@ export default {
       ]),
   ),
   output: {
-    dir: 'dist',
+    dir: 'dist', // Set to 'dist/src'
     format: 'esm',
     sourcemap: true,
     preserveModules: true,
