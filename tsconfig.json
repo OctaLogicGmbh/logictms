@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/src",
+    "outDir": "./dist",
     "rootDir": "./src",
     "target": "ES2021",
     "useDefineForClassFields": true,

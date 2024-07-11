@@ -2,14 +2,14 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 async function fixServerPath() {
-  const serverPath = path.join('dist', 'src', 'server.js');
-  const newPath = path.join('dist', 'server.js');
+  const serverFilePath = path.resolve('dist/src/server.js');
+  const targetPath = path.resolve('dist/server.js');
 
   try {
-    await fs.copyFile(serverPath, newPath);
+    await fs.copyFile(serverFilePath, targetPath);
     console.log('Server file path adjusted.');
-  } catch (err) {
-    console.error(`Error adjusting server file path: ${err}`);
+  } catch (error) {
+    console.error(`Server file not found: ${serverFilePath}`, error);
   }
 }
 
