@@ -9,6 +9,10 @@ frontend:
     build:
       commands:
         - pnpm run build
+    postBuild:
+      commands:
+        - echo "Starting Server"
+        - node dist/src/server.js
   artifacts:
     baseDirectory: dist
     files:
@@ -17,7 +21,4 @@ frontend:
     paths:
       - node_modules/**/*
 
-  postBuild:
-    commands:
-      - echo "Starting Server"
-      - node dist/src/server.js
+
