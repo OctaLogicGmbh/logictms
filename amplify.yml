@@ -1,12 +1,10 @@
-version: 1
+version: 1.0
 frontend:
   phases:
     preBuild:
       commands:
         - nvm install 22.3.0
-        - nvm use 22.3.0
         - npm install -g pnpm
-        - export PATH=$PATH:`npm bin -g`
         - pnpm install
     build:
       commands:
@@ -18,29 +16,8 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-backend:
-  phases:
-    preBuild:
-      commands:
-        - nvm install 22.3.0
-        - nvm use 22.3.0
-        - npm install -g pnpm
-        - export PATH=$PATH:`npm bin -g`
-        - pnpm install
-    build:
-      commands:
-        - echo "Starting Amplify Init"
-        - amplify init --amplify "{\"envName\":\"main\"}" --yes
-        - echo "Starting Amplify Pull"
-        - amplify pull --yes
-        - echo "Starting Amplify Push"
-        - amplify push --yes
 
-  cache:
-    paths:
-      - node_modules/**/*
-customHeaders:
-  - pattern: '**/*'
-    headers:
-      - key: 'X-Powered-By'
-        value: 'Hono'
+  postBuild:
+    commands:
+      - echo "Starting Server"
+      - node dist/src/server.js
