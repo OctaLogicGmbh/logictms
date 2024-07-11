@@ -41,6 +41,7 @@ backend:
   custom:
     startServer:
       commands:
+        - echo "Starting server ujuu"
         - pnpm run start-server
 
 customHeaders:
