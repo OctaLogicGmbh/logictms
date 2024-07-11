@@ -35,10 +35,7 @@ backend:
         - amplify pull --yes
         - echo "Starting Amplify Push"
         - amplify push --yes
-    postBuild:
-      commands:
-        - echo "Starting Server"
-        - pnpm start
+
   cache:
     paths:
       - node_modules/**/*
